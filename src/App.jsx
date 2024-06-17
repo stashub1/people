@@ -15,6 +15,7 @@ import "./App.css";
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
+  console.log("Version 3.0.0");
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
