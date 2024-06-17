@@ -20,7 +20,7 @@ const App = () => {
   }, []);
 
   return (
-    <TonConnectUIProvider manifestUrl="http://localhost:3004/tonconnect-manifest.json">
+    <TonConnectUIProvider manifestUrl="https://humancredo.com/tonconnect-manifest.json">
       <div>
         <Navigation />
         <Header data={landingPageData.Header} />
