@@ -1,7 +1,9 @@
-import React from "react";
-import { TonConnectButton } from "@tonconnect/ui-react";
+import React, { useEffect } from "react";
+import { TonConnectButton, TonConnectUIProvider, useTonConnectUI } from "@tonconnect/ui-react";
 
-export const Navigation = (props) => {
+export const Navigation = () => {
+  const { connectWallet } = useTonConnectUI();
+
   return (
     <nav id="menu" className="navbar navbar-default navbar-fixed-top">
       <div className="container">
