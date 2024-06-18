@@ -15,13 +15,18 @@ import "./App.css";
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
-  console.log("Version 3.0.0");
+  console.log("Version 4.0.0");
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
 
   return (
-    <TonConnectUIProvider manifestUrl="https://humancredo.com/ton_manifest.json">
+    <TonConnectUIProvider
+      manifestUrl="https://humancredo.com/ton_manifest.json"
+      actionsConfiguration={{
+        twaReturnUrl: "https://t.me/peoplecredo_bot",
+      }}
+    >
       <div>
         <Navigation />
         <Header data={landingPageData.Header} />
