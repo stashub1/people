@@ -23,12 +23,7 @@ const App = () => {
   }, []);
 
   return (
-    <TonConnectUIProvider
-      manifestUrl="https://humancredo.com/ton_manifest.json"
-      actionsConfiguration={{
-        twaReturnUrl: "https://t.me/WebAppWalletBot/peoplecredo_bot",
-      }}
-    >
+    <TonConnectUIProvider manifestUrl="https://humancredo.com/ton_manifest.json">
       <div>
         <Router>
           <Navigation />

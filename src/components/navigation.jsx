@@ -30,11 +30,10 @@ export const Navigation = () => {
               </a>
             </li>
             <li>
-              <a href="/stan_miniapp" className="">
+              <a href="/stan_miniapp" className="page-scroll">
                 Tokenminds
               </a>
             </li>
-
             <li>
               <header>
                 <TonConnectButton />
