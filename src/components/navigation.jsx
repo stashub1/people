@@ -20,15 +20,21 @@ export const Navigation = () => {
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul className="nav navbar-nav navbar-right">
             <li>
-              <a href="#features" className="page-scroll">
+              <a href="/#features" className="page-scroll">
                 Features
               </a>
             </li>
             <li>
-              <a href="#about" className="page-scroll">
+              <a href="/#about" className="page-scroll">
                 About project
               </a>
             </li>
+            <li>
+              <a href="/stan_miniapp" className="">
+                Tokenminds
+              </a>
+            </li>
+
             <li>
               <header>
                 <TonConnectButton />

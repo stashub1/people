@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import { Navigation } from "./components/navigation";
 import { Header } from "./components/header";
 import { Features } from "./components/features";
@@ -9,13 +11,13 @@ import { Testimonials } from "./components/testimonials";
 import { Team } from "./components/Team";
 import { Contact } from "./components/contact";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
-
+import { Tokenminds } from "./components/tokenminds/tokenminds";
 import JsonData from "./data/data.json";
 import "./App.css";
 
 const App = () => {
   const [landingPageData, setLandingPageData] = useState({});
-  console.log("Version 4.0.0");
+  console.log("Version 5.0.0");
   useEffect(() => {
     setLandingPageData(JsonData);
   }, []);
@@ -24,14 +26,28 @@ const App = () => {
     <TonConnectUIProvider
       manifestUrl="https://humancredo.com/ton_manifest.json"
       actionsConfiguration={{
-        twaReturnUrl: "https://t.me/peoplecredo_bot",
+        twaReturnUrl: "https://t.me/WebAppWalletBot/peoplecredo_bot",
       }}
     >
       <div>
-        <Navigation />
-        <Header data={landingPageData.Header} />
-        <Features data={landingPageData.Features} />
-        <About data={landingPageData.About} />
+        <Router>
+          <Navigation />
+
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <div>
+                  <Navigation />
+                  <Header data={landingPageData.Header} />
+                  <Features data={landingPageData.Features} />
+                  <About data={landingPageData.About} />
+                </div>
+              }
+            />
+            <Route path="/stan_miniapp" element={<Tokenminds />} />
+          </Routes>
+        </Router>
       </div>
     </TonConnectUIProvider>
   );
